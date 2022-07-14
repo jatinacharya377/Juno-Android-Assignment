@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.FragmentStates">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_20"
+            android:text="@string/select_any_options"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/layout_states"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/TextNormal"/>
+
+        <LinearLayout
+            android:id="@+id/layout_states"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_empty_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/work_sans"
+                android:insetBottom="@dimen/offset_0"
+                android:insetLeft="@dimen/offset_0"
+                android:insetRight="@dimen/offset_0"
+                android:insetTop="@dimen/offset_0"
+                android:text="@string/view_empty_state"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="@dimen/offset_4" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_values_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_20"
+                android:fontFamily="@font/work_sans"
+                android:insetBottom="@dimen/offset_0"
+                android:insetLeft="@dimen/offset_0"
+                android:insetRight="@dimen/offset_0"
+                android:insetTop="@dimen/offset_0"
+                android:text="@string/view_values_state"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="@dimen/offset_4" />
+
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

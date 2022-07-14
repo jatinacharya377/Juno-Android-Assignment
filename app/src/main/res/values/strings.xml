@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Juno Android Assignment</string>
+    <string name="fragment_splash">FragmentSplash</string>
+    <string name="fragment_states">FragmentStates</string>
+    <string name="fragment_home">FragmentHome</string>
+    <string name="view_empty_state">View Empty State</string>
+    <string name="view_values_state">View Values State</string>
+    <string name="select_any_options">Please, select any of the options.</string>
 </resources>

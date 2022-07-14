@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--font-->
+    <dimen name="font_14">14sp</dimen>
+    <!--margin, padding-->
+    <dimen name="offset_0">0dp</dimen>
+    <dimen name="offset_4">4dp</dimen>
+    <dimen name="offset_20">20dp</dimen>
+</resources>
