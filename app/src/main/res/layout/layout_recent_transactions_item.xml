@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/offset_12">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_crypto_holding_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardBackgroundColor="@color/cultured"
+            app:cardCornerRadius="@dimen/offset_10"
+            app:cardElevation="@dimen/offset_0"
+            app:contentPadding="@dimen/offset_14">
+
+            <ImageView
+                android:id="@+id/iv_crypto_holding_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_app_logo_2"
+                tools:ignore="ContentDescription" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_transaction_title"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/offset_20"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/tv_transaction_amount"
+            app:layout_constraintStart_toEndOf="@id/cv_crypto_holding_icon"
+            app:layout_constraintTop_toTopOf="@id/cv_crypto_holding_icon"
+            style="@style/TextTitle"
+            tools:text="BTC" />
+
+        <TextView
+            android:id="@+id/tv_transaction_time"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/offset_20"
+            app:layout_constraintBottom_toBottomOf="@id/cv_crypto_holding_icon"
+            app:layout_constraintEnd_toStartOf="@id/tv_transaction_sub_amount"
+            app:layout_constraintStart_toEndOf="@id/cv_crypto_holding_icon"
+            style="@style/TextTitle"
+            tools:text="1 minute ago" />
+
+        <TextView
+            android:id="@+id/tv_transaction_amount"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_transaction_title"
+            app:layout_constraintTop_toTopOf="@id/cv_crypto_holding_icon"
+            style="@style/TextTitle"
+            tools:text="$131.70" />
+
+        <TextView
+            android:id="@+id/tv_transaction_sub_amount"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            app:layout_constraintBottom_toBottomOf="@id/cv_crypto_holding_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_transaction_time"
+            style="@style/TextTitle"
+            tools:text="Buy Price: $3,744.93" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

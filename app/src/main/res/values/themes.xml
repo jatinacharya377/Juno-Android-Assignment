@@ -14,11 +14,28 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="TextNormal">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+    <style name="TextExtraSmall">
         <item name="android:fontFamily">@font/work_sans</item>
-        <item name="android:gravity">start</item>
+        <item name="android:textSize">@dimen/font_10</item>
+    </style>
+
+    <style name="TextSmall">
+        <item name="android:fontFamily">@font/work_sans</item>
+        <item name="android:textSize">@dimen/font_12</item>
+    </style>
+
+    <style name="TextNormal">
+        <item name="android:fontFamily">@font/work_sans</item>
         <item name="android:textSize">@dimen/font_14</item>
+    </style>
+
+    <style name="TextTitle">
+        <item name="android:fontFamily">@font/work_sans_medium</item>
+        <item name="android:textSize">@dimen/font_14</item>
+    </style>
+
+    <style name="TextTitle2">
+        <item name="android:fontFamily">@font/work_sans_bold</item>
+        <item name="android:textSize">@dimen/font_16</item>
     </style>
 </resources>
