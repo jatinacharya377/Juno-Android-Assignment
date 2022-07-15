@@ -21,8 +21,8 @@
 
             <ImageView
                 android:id="@+id/iv_crypto_holding_icon"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="@dimen/size_32"
+                android:layout_height="@dimen/size_32"
                 tools:ignore="ContentDescription" />
 
         </com.google.android.material.card.MaterialCardView>

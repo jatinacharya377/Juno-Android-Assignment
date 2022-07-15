@@ -65,21 +65,21 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/iv_current_prices_graph"
                     app:cardBackgroundColor="@color/spanish_gray"
-                    app:cardCornerRadius="@dimen/offset_10"
+                    app:cardCornerRadius="@dimen/offset_4"
                     app:cardElevation="@dimen/offset_0">
 
                     <ImageView
                         android:id="@+id/iv_current_prices_icon"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
+                        android:layout_width="@dimen/size_32"
+                        android:layout_height="@dimen/size_32"
                         tools:ignore="ContentDescription" />
 
                 </com.google.android.material.card.MaterialCardView>
 
                 <ImageView
                     android:id="@+id/iv_current_prices_graph"
-                    android:layout_width="120dp"
-                    android:layout_height="50dp"
+                    android:layout_width="@dimen/size_120"
+                    android:layout_height="@dimen/size_50"
                     android:layout_marginStart="@dimen/offset_10"
                     android:background="@color/spanish_gray"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +89,7 @@
 
                 <TextView
                     android:id="@+id/tv_recent_transactions_title"
-                    android:layout_width="50dp"
+                    android:layout_width="@dimen/size_50"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/offset_20"
                     android:layout_marginTop="@dimen/offset_10"
@@ -100,7 +100,7 @@
 
                 <TextView
                     android:id="@+id/tv_current_price_in_usd"
-                    android:layout_width="100dp"
+                    android:layout_width="@dimen/size_100"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/offset_10"
                     android:background="@color/spanish_gray"
@@ -110,7 +110,7 @@
 
                 <TextView
                     android:id="@+id/tv_current_price_value"
-                    android:layout_width="50dp"
+                    android:layout_width="@dimen/size_50"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/offset_10"
                     android:background="@color/spanish_gray"
@@ -121,7 +121,7 @@
 
                 <TextView
                     android:id="@+id/tv_current_price_time"
-                    android:layout_width="20dp"
+                    android:layout_width="@dimen/size_20"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/offset_10"
                     android:background="@color/spanish_gray"

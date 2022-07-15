@@ -30,8 +30,8 @@
 
                 <ImageView
                     android:id="@+id/iv_crypto_account"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="@dimen/size_32"
+                    android:layout_height="@dimen/size_32"
                     android:layout_marginStart="@dimen/offset_2"
                     android:background="@color/spanish_gray"
                     app:layout_constraintBottom_toBottomOf="parent"
