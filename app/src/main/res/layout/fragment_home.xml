@@ -8,6 +8,45 @@
         android:layout_height="match_parent"
         tools:context=".ui.fragments.FragmentHome">
 
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/layout_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/layout_crypto_acc_shimmer_placeholder" />
+
+                <include layout="@layout/layout_crypto_holdings_shimmer_placeholder" />
+
+                <include layout="@layout/layout_crypto_holdings_shimmer_placeholder" />
+
+                <include layout="@layout/layout_crypto_holdings_shimmer_placeholder" />
+
+                <include layout="@layout/layout_recent_transaction_shimmer_placeholder" />
+
+                <include layout="@layout/layout_recent_transaction_shimmer_placeholder" />
+
+                <include layout="@layout/layout_recent_transaction_shimmer_placeholder" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/layout_current_prices_shimmer_placeholder" />
+
+                    <include layout="@layout/layout_current_prices_shimmer_placeholder" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_crypto_state_list"
             android:layout_width="@dimen/size_0"

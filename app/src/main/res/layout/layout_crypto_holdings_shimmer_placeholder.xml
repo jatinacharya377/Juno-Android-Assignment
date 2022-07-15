@@ -3,33 +3,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-        <variable
-            name="transaction"
-            type="com.juno.junoandroidassignment.data.model.crypto.AllTransactions" />
-        <import type="android.view.View" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/offset_12">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cv_transaction_icon"
+            android:id="@+id/cv_crypto_holding_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:cardCornerRadius="@dimen/offset_10"
+            app:cardBackgroundColor="@color/spanish_gray"
+            app:cardCornerRadius="@dimen/offset_4"
             app:cardElevation="@dimen/offset_0">
 
             <ImageView
-                android:id="@+id/iv_transaction_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_app_logo_2"
+                android:id="@+id/iv_crypto_holding_icon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
                 tools:ignore="ContentDescription" />
 
         </com.google.android.material.card.MaterialCardView>
@@ -43,26 +36,23 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/layout_balance"
-            app:layout_constraintStart_toEndOf="@id/cv_transaction_icon"
+            app:layout_constraintStart_toEndOf="@id/cv_crypto_holding_icon"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/tv_transaction_title"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_crypto_title"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{transaction.title}"
-                android:textColor="@color/black"
-                style="@style/TextTitle2"
-                tools:text="BTC" />
+                android:background="@color/spanish_gray"
+                style="@style/TextTitle2" />
 
             <TextView
-                android:id="@+id/tv_transaction_time"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_current_bal_in_token"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/offset_6"
-                android:text="@{transaction.txn_time}"
-                style="@style/TextSmall"
-                tools:text="1 minute ago" />
+                android:background="@color/spanish_gray"
+                style="@style/TextSmall" />
 
         </LinearLayout>
 
@@ -78,26 +68,25 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/tv_transaction_amount"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_current_bal_in_usd"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/spanish_gray"
                 android:gravity="end"
-                android:text="@{@string/current_bal_in_usd(transaction.txn_amount)}"
-                android:textColor="@{transaction.title.contains(`Received`) |transaction.title.contains(`Withdrawn`) | transaction.title.contains(`Cashback`) | transaction.title.contains(`Sold`) ? @color/apple : @color/black}"
-                style="@style/TextNormal"
-                tools:text="$131.70" />
+                style="@style/TextTitle2" />
 
             <TextView
                 android:id="@+id/tv_transaction_sub_amount"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/offset_6"
-                android:gravity="end"
-                android:text="@{transaction.txn_sub_amount}"
-                android:textColor="@{transaction.title.contains(`Received`) |transaction.title.contains(`Withdrawn`) | transaction.title.contains(`Cashback`) | transaction.title.contains(`Sold`) ? @color/apple : @color/spanish_gray}"
-                android:visibility="@{transaction.txn_sub_amount != null ? View.VISIBLE : View.GONE}"
-                style="@style/TextSmall"
-                tools:text="Buy Price: $3,744.93" />
+                android:background="@color/spanish_gray"
+                android:drawablePadding="@dimen/offset_10"
+                android:gravity="center|end"
+                android:text="@string/txn_sub_amount"
+                android:textColor="@color/apple"
+                app:drawableStartCompat="@drawable/ic_trending_up"
+                style="@style/TextSmall" />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

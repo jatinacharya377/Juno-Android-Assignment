@@ -95,6 +95,8 @@
                 android:layout_marginTop="@dimen/offset_6"
                 android:drawablePadding="@dimen/offset_10"
                 android:gravity="center|end"
+                android:text="@string/txn_sub_amount"
+                android:textColor="@color/apple"
                 app:drawableStartCompat="@drawable/ic_trending_up"
                 style="@style/TextSmall"
                 tools:text="$150.22 (+8.51%)" />

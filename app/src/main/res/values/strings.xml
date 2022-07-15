@@ -22,4 +22,8 @@
     <string name="current_prices">Current Prices</string>
     <string name="current_bal_in_usd">$%1s</string>
     <string name="current_bal_in_token">%1s %2s</string>
+    <string name="txn_sub_amount">$150.22 (+8.51%)</string>
+    <string name="_24h">24h</string>
+    <string name="current_sub_amount">$300.22 (+21.51%)</string>
+    <string name="_7_22">7.22%</string>
 </resources>
