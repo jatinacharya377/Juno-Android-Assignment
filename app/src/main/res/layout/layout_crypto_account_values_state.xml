@@ -12,8 +12,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/offset_10">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cv_crypto_account"
@@ -56,7 +55,6 @@
                     android:text="@{cryptoBalance.title}"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toTopOf="@id/tv_crypto_holdings_title"
-                    app:layout_constraintEnd_toStartOf="@id/btn_deposit"
                     app:layout_constraintStart_toEndOf="@id/iv_crypto_account"
                     app:layout_constraintTop_toTopOf="@id/iv_crypto_account"
                     style="@style/TextTitle2"
@@ -72,40 +70,37 @@
                     android:text="@{cryptoBalance.subTitle}"
                     android:visibility="@{cryptoBalance.subTitle != null ? View.VISIBLE : View.GONE}"
                     app:layout_constraintBottom_toBottomOf="@id/iv_crypto_account"
-                    app:layout_constraintEnd_toStartOf="@id/btn_deposit"
+                    app:layout_constraintEnd_toStartOf="@id/tv_current_sub_balance"
                     app:layout_constraintStart_toEndOf="@id/iv_crypto_account"
                     app:layout_constraintTop_toBottomOf="@id/tv_crypto_account_title"
                     style="@style/TextSmall"
                     tools:text="BTC, ETH and more" />
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btn_deposit"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tv_current_balance"
+                    android:layout_width="@dimen/size_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/offset_2"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="@dimen/offset_4"
+                    android:gravity="end"
+                    android:text="@{@string/current_bal_in_usd(cryptoBalance.current_bal_in_usd)}"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_crypto_account_title"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:cardBackgroundColor="@android:color/transparent"
-                    app:cardCornerRadius="@dimen/offset_4"
-                    app:cardElevation="@dimen/offset_0"
-                    app:strokeColor="@color/electric_indigo"
-                    app:strokeWidth="@dimen/offset_1">
+                    app:layout_constraintTop_toTopOf="@id/tv_crypto_account_title"
+                    style="@style/TextTitle2"
+                    tools:text="$131.70" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="@dimen/offset_20"
-                        android:layout_marginVertical="@dimen/offset_10"
-                        android:fontFamily="@font/work_sans"
-                        android:gravity="center"
-                        android:text="@string/deposit"
-                        android:textColor="@color/electric_indigo"
-                        style="@style/TextSmall" />
-
-                </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/tv_current_sub_balance"
+                    android:layout_width="@dimen/size_0"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_crypto_holdings_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_crypto_holdings_title"
+                    app:layout_constraintTop_toTopOf="@id/tv_crypto_holdings_title"
+                    style="@style/TextSmall"
+                    tools:text="Buy Price: $3,744.93" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -12,10 +12,13 @@
             android:id="@+id/rv_crypto_state_list"
             android:layout_width="@dimen/size_0"
             android:layout_height="@dimen/size_0"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/offset_20"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="4"
             tools:listitem="" />
     </androidx.constraintlayout.widget.ConstraintLayout>

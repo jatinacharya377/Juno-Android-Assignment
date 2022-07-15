@@ -9,24 +9,26 @@
 
         <TextView
             android:id="@+id/tv_recent_transactions_title"
-            style="@style/TextTitle"
+            style="@style/TextNormal"
             android:layout_width="@dimen/size_0"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/offset_12"
             android:layout_marginTop="@dimen/offset_20"
             android:text="@string/current_prices"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@id/rv_recent_transactions_list"
+            app:layout_constraintBottom_toTopOf="@id/rv_current_prices_list"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_recent_transactions_list"
+            android:id="@+id/rv_current_prices_list"
             android:layout_width="@dimen/size_0"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/offset_20"
             android:layout_marginTop="@dimen/offset_14"
+            android:clipToPadding="false"
             android:orientation="horizontal"
+            android:paddingEnd="@dimen/offset_12"
             app:layout_constraintBottom_toTopOf="@id/view_divider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_max="@dimen/size_300"
@@ -34,7 +36,8 @@
             app:layout_constraintTop_toBottomOf="@id/tv_recent_transactions_title"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="4"
-            tools:listitem="@layout/layout_current_prices_item"/>
+            tools:listitem="@layout/layout_current_prices_item"
+            tools:ignore="RtlSymmetry" />
 
         <View
             android:id="@+id/view_divider"
@@ -45,6 +48,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rv_recent_transactions_list" />
+            app:layout_constraintTop_toBottomOf="@id/rv_current_prices_list" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

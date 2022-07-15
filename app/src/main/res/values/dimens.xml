@@ -7,7 +7,10 @@
     <dimen name="font_16">16sp</dimen>
     <!--margin, padding-->
     <dimen name="offset_0">0dp</dimen>
+    <dimen name="offset_1">1dp</dimen>
+    <dimen name="offset_2">2dp</dimen>
     <dimen name="offset_4">4dp</dimen>
+    <dimen name="offset_6">6dp</dimen>
     <dimen name="offset_10">10dp</dimen>
     <dimen name="offset_12">12dp</dimen>
     <dimen name="offset_14">14dp</dimen>
@@ -15,8 +18,5 @@
     <!--size-->
     <dimen name="size_0">0dp</dimen>
     <dimen name="size_2">2dp</dimen>
-    <dimen name="offset_2">2dp</dimen>
-    <dimen name="offset_1">1dp</dimen>
     <dimen name="size_300">300dp</dimen>
-    <dimen name="offset_6">6dp</dimen>
 </resources>

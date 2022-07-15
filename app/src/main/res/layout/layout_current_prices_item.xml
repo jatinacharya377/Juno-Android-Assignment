@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="price"
+            type="com.juno.junoandroidassignment.data.model.crypto.CryptoPrices" />
+        <import type="android.view.View" />
+    </data>
     
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -61,6 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_app_logo_2"
+                    app:layout_constraintEnd_toStartOf="@id/iv_current_prices_graph"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="ContentDescription" />
@@ -82,9 +90,10 @@
                     android:layout_width="@dimen/size_0"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/offset_20"
+                    android:text="@{price.title}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/iv_current_prices_icon"
-                    style="@style/TextTitle"
+                    style="@style/TextNormal"
                     tools:text="Bitcoin" />
 
                 <TextView
@@ -92,7 +101,9 @@
                     android:layout_width="@dimen/size_0"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/offset_10"
+                    android:text="@{@string/current_bal_in_usd(price.current_bal_in_usd)}"
                     android:textColor="@color/black"
+                    android:visibility="@{price.current_bal_in_usd != null ? View.VISIBLE : View.GONE}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_recent_transactions_title"
                     style="@style/TextTitle2"

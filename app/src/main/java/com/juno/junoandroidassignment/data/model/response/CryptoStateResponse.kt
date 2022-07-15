@@ -14,5 +14,5 @@ data class CryptoStateResponse(
     @SerializedName("crypto_prices")
     val cryptoPrices: List<CryptoPrices>?,
     @SerializedName("all_transactions")
-    val allTransactions: List<AllTransactions>?,
+    val allTransactions: List<AllTransactions>?
 )
