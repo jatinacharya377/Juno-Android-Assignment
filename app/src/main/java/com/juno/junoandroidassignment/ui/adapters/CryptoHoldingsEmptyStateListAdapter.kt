@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.juno.junoandroidassignment.GlideApp
+import com.juno.junoandroidassignment.R
 import com.juno.junoandroidassignment.data.model.crypto.CryptoHoldings
 import com.juno.junoandroidassignment.databinding.LayoutCryptoHoldingsEmptyStateItemBinding
 
@@ -38,6 +40,10 @@ class CryptoHoldingsEmptyStateListAdapter: RecyclerView.Adapter<CryptoHoldingsEm
     inner class CryptoHoldingsVH(val binding: LayoutCryptoHoldingsEmptyStateItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(item: CryptoHoldings) {
             binding.cryptoHolding = item
+            GlideApp.with(binding.root.context)
+                .load("https://cdn.onjuno.com/crypto-logo/BTC.svg")
+                .placeholder(R.drawable.ic_app_logo_2)
+                .into(binding.ivCryptoHoldingIcon)
         }
     }
 }

@@ -10,7 +10,6 @@ import java.lang.Exception
 import android.view.MotionEvent
 import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
 
-
 class CryptoStateListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var cryptoStateList = ArrayList<CryptoState>()

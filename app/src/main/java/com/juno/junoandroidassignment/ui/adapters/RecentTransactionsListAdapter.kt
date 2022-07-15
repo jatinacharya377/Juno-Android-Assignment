@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.juno.junoandroidassignment.GlideApp
+import com.juno.junoandroidassignment.R
 import com.juno.junoandroidassignment.data.model.crypto.AllTransactions
 import com.juno.junoandroidassignment.databinding.LayoutRecentTransactionsItemBinding
 
@@ -39,7 +41,10 @@ class RecentTransactionsListAdapter: RecyclerView.Adapter<RecentTransactionsList
     inner class RecentTransactionsVH(val binding: LayoutRecentTransactionsItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: AllTransactions) {
             binding.transaction = item
-            //Glide.with(binding.root.context).load(item.txn_logo).into(binding.ivTransactionIcon)
+            GlideApp.with(binding.root.context)
+                .load(item.txn_logo)
+                .placeholder(R.drawable.ic_app_logo_2)
+                .into(binding.ivTransactionIcon)
         }
     }
 }

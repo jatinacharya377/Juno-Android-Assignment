@@ -22,10 +22,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:cardBackgroundColor="@color/cultured"
             app:cardCornerRadius="@dimen/offset_10"
-            app:cardElevation="@dimen/offset_0"
-            app:contentPadding="@dimen/offset_12">
+            app:cardElevation="@dimen/offset_0">
 
             <ImageView
                 android:id="@+id/iv_crypto_holding_icon"
@@ -38,15 +36,15 @@
 
         <LinearLayout
             android:id="@+id/layout_title"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/offset_14"
             android:gravity="center|start"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@id/cv_crypto_holding_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/layout_balance"
             app:layout_constraintStart_toEndOf="@id/cv_crypto_holding_icon"
-            app:layout_constraintTop_toTopOf="@id/cv_crypto_holding_icon">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tv_crypto_title"
@@ -71,14 +69,14 @@
 
         <LinearLayout
             android:id="@+id/layout_balance"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="wrap_content"
             android:gravity="center|end"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@id/cv_crypto_holding_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/layout_title"
-            app:layout_constraintTop_toTopOf="@id/cv_crypto_holding_icon">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tv_current_bal_in_usd"

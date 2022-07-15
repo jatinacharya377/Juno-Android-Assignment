@@ -63,15 +63,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/offset_14">
 
-                <ImageView
-                    android:id="@+id/iv_current_prices_icon"
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_current_prices_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_app_logo_2"
                     app:layout_constraintEnd_toStartOf="@id/iv_current_prices_graph"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="ContentDescription" />
+                    app:cardCornerRadius="@dimen/offset_10"
+                    app:cardElevation="@dimen/offset_0">
+
+                    <ImageView
+                        android:id="@+id/iv_current_prices_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_app_logo_2"
+                        tools:ignore="ContentDescription" />
+
+                </com.google.android.material.card.MaterialCardView>
 
                 <ImageView
                     android:id="@+id/iv_current_prices_graph"
@@ -79,10 +88,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/offset_10"
                     android:src="@drawable/ic_graph"
-                    app:layout_constraintBottom_toBottomOf="@id/iv_current_prices_icon"
+                    app:layout_constraintBottom_toBottomOf="@id/cv_current_prices_icon"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/iv_current_prices_icon"
-                    app:layout_constraintTop_toTopOf="@id/iv_current_prices_icon"
+                    app:layout_constraintStart_toEndOf="@id/cv_current_prices_icon"
+                    app:layout_constraintTop_toTopOf="@id/cv_current_prices_icon"
                     tools:ignore="ContentDescription" />
 
                 <TextView
@@ -92,7 +101,7 @@
                     android:layout_marginTop="@dimen/offset_20"
                     android:text="@{price.title}"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/iv_current_prices_icon"
+                    app:layout_constraintTop_toBottomOf="@id/cv_current_prices_icon"
                     style="@style/TextNormal"
                     tools:text="Bitcoin" />
 
