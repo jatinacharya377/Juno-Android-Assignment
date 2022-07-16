@@ -3,7 +3,41 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/drawable/bg_divider.xml" value="0.2703125" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/drawable/bg_rv_crypto_holding.xml" value="0.2703125" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/drawable/bg_tv_buy.xml" value="0.2703125" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/drawable/ic_app_logo.xml" value="0.2703125" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/drawable/ic_app_logo_2.xml" value="0.2703125" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/drawable/ic_download.xml" value="0.2703125" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/drawable/ic_trending_down.xml" value="0.2703125" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/drawable/ic_trending_up.xml" value="0.2703125" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/font/comfortaa.xml" value="0.284375" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/font/work_sans.xml" value="0.284375" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/font/work_sans_medium.xml" value="0.284375" />
         <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/dialog_error.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/fragment_splash.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/fragment_states.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/fragment_view_all_transactions.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_crypto_acc_shimmer_placeholder.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_crypto_account.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_crypto_account_empty_state.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_crypto_account_values_state.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_crypto_holdings_empty_state.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_crypto_holdings_empty_state_item.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_crypto_holdings_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_crypto_holdings_shimmer_placeholder.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_crypto_holdings_values_state.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_crypto_holdings_values_state_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_current_prices.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_current_prices_item.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_current_prices_shimmer_placeholder.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_recent_transaction_shimmer_placeholder.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_recent_transactions.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_recent_transactions_empty_state.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/layout/layout_recent_transactions_item.xml" value="0.23294723294723294" />
+        <entry key="..\:/AndroidStudioProjects/JunoAndroidAssignment/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
       </map>
     </option>
   </component>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="price"
+            type="com.juno.junoandroidassignment.data.model.crypto.CryptoPrices" />
+        <import type="android.view.View" />
+    </data>
+    
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/offset_10"
+            android:layout_marginVertical="@dimen/offset_10"
+            app:cardCornerRadius="@dimen/offset_10"
+            app:cardElevation="@dimen/offset_0"
+            app:contentPadding="@dimen/offset_10"
+            app:strokeColor="@color/bright_gray"
+            app:strokeWidth="@dimen/offset_1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/offset_14">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_current_prices_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/av_current_prices_graph"
+                    app:layout_constraintEnd_toStartOf="@id/av_current_prices_graph"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/av_current_prices_graph"
+                    app:cardCornerRadius="@dimen/offset_10"
+                    app:cardElevation="@dimen/offset_0">
+
+                    <ImageView
+                        android:id="@+id/iv_current_prices_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_app_logo_2"
+                        tools:ignore="ContentDescription" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/av_current_prices_graph"
+                    android:layout_width="@dimen/size_120"
+                    android:layout_height="@dimen/size_80"
+                    android:layout_marginStart="@dimen/offset_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cv_current_prices_icon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/anim_graph" />
+
+                <TextView
+                    android:id="@+id/tv_recent_transactions_title"
+                    android:layout_width="@dimen/size_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_10"
+                    android:text="@{price.title}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/av_current_prices_graph"
+                    style="@style/TextNormal"
+                    tools:text="Bitcoin" />
+
+                <TextView
+                    android:id="@+id/tv_current_price_in_usd"
+                    android:layout_width="@dimen/size_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_6"
+                    android:text="@{@string/current_bal_in_usd(price.current_bal_in_usd)}"
+                    android:textColor="@color/black"
+                    android:visibility="@{price.current_bal_in_usd != null ? View.VISIBLE : View.GONE}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_recent_transactions_title"
+                    style="@style/TextTitle2"
+                    tools:text="$33,042.34" />
+
+
+                <TextView
+                    android:id="@+id/tv_current_price_value"
+                    android:layout_width="@dimen/size_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_4"
+                    android:drawablePadding="@dimen/offset_4"
+                    android:gravity="center"
+                    android:text="@string/_7_22"
+                    android:textColor="@color/coral_red"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_current_price_in_usd"
+                    app:drawableStartCompat="@drawable/ic_trending_down"
+                    style="@style/TextExtraSmall"
+                    tools:text="7.22%" />
+
+                <TextView
+                    android:id="@+id/tv_current_price_time"
+                    android:layout_width="@dimen/size_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/offset_10"
+                    android:text="@string/_24h"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_current_price_value"
+                    app:layout_constraintStart_toEndOf="@id/tv_current_price_value"
+                    app:layout_constraintTop_toTopOf="@id/tv_current_price_value"
+                    style="@style/TextExtraSmall"
+                    tools:text="24h" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:orientation="horizontal"
+            android:padding="@dimen/offset_2">
+
+            <TextView
+                android:id="@+id/tv_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/offset_6"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_tv_buy"
+                android:elevation="@dimen/offset_1"
+                android:paddingHorizontal="@dimen/offset_10"
+                android:paddingVertical="@dimen/offset_4"
+                app:drawableStartCompat="@drawable/ic_download"
+                app:drawableTint="@color/electric_indigo" />
+
+            <TextView
+                android:id="@+id/tv_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_tv_buy"
+                android:elevation="@dimen/offset_1"
+                android:paddingHorizontal="@dimen/offset_10"
+                android:paddingVertical="@dimen/offset_4"
+                android:text="@string/buy"
+                android:textColor="@color/electric_indigo"
+                style="@style/TextNormal" />
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>
