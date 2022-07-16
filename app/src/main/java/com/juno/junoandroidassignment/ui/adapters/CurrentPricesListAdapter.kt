@@ -11,7 +11,16 @@ import com.juno.junoandroidassignment.databinding.LayoutCurrentPricesItemBinding
 
 class CurrentPricesListAdapter: RecyclerView.Adapter<CurrentPricesListAdapter.CurrentPricesVH>() {
 
+    private lateinit var listener: CurrentPricesListener
     private var priceList = ArrayList<CryptoPrices>()
+
+    interface CurrentPricesListener {
+        fun onClickBuy(item: CryptoPrices)
+    }
+
+    fun setHoldingsListener(listener: CurrentPricesListener) {
+        this.listener = listener
+    }
 
     @SuppressLint("NotifyDataSetChanged")
     fun setItems(priceList: ArrayList<CryptoPrices>) {
@@ -44,6 +53,10 @@ class CurrentPricesListAdapter: RecyclerView.Adapter<CurrentPricesListAdapter.Cu
                 .load(item.logo)
                 .placeholder(R.drawable.ic_app_logo_2)
                 .into(binding.ivCurrentPricesIcon)
+            binding.avCurrentPricesGraph.setMinAndMaxFrame(145, 145)
+            binding.tvBuy.setOnClickListener {
+                listener.onClickBuy(item)
+            }
         }
     }
 }

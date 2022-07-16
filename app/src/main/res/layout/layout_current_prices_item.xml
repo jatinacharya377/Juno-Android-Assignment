@@ -34,10 +34,10 @@
                     android:id="@+id/cv_current_prices_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="@id/iv_current_prices_graph"
-                    app:layout_constraintEnd_toStartOf="@id/iv_current_prices_graph"
+                    app:layout_constraintBottom_toBottomOf="@id/av_current_prices_graph"
+                    app:layout_constraintEnd_toStartOf="@id/av_current_prices_graph"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/iv_current_prices_graph"
+                    app:layout_constraintTop_toTopOf="@id/av_current_prices_graph"
                     app:cardCornerRadius="@dimen/offset_10"
                     app:cardElevation="@dimen/offset_0">
 
@@ -50,17 +50,18 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <ImageView
-                    android:id="@+id/iv_current_prices_graph"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/av_current_prices_graph"
+                    android:layout_width="@dimen/size_120"
+                    android:layout_height="@dimen/size_80"
                     android:layout_marginStart="@dimen/offset_10"
-                    android:layout_marginTop="@dimen/offset_10"
                     android:src="@drawable/ic_graph"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/cv_current_prices_icon"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="ContentDescription" />
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/anim_graph" />
 
                 <TextView
                     android:id="@+id/tv_recent_transactions_title"
@@ -69,7 +70,7 @@
                     android:layout_marginTop="@dimen/offset_10"
                     android:text="@{price.title}"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/iv_current_prices_graph"
+                    app:layout_constraintTop_toBottomOf="@id/av_current_prices_graph"
                     style="@style/TextNormal"
                     tools:text="Bitcoin" />
 

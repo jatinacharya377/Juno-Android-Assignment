@@ -28,4 +28,6 @@
     <string name="_7_22">7.22%</string>
     <string name="fragment_view_all_transactions">FragmentViewAllTransactions</string>
     <string name="retry">Retry</string>
+    <string name="bought">Bought %1s %2s</string>
+    <string name="buy_price">Buy Price: $3744.93</string>
 </resources>

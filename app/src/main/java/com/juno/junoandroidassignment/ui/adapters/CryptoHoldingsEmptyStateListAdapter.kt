@@ -12,7 +12,16 @@ import com.juno.junoandroidassignment.databinding.LayoutCryptoHoldingsEmptyState
 
 class CryptoHoldingsEmptyStateListAdapter: RecyclerView.Adapter<CryptoHoldingsEmptyStateListAdapter.CryptoHoldingsVH>() {
 
+    private lateinit var listener: HoldingsListener
     private var holdingsList = ArrayList<CryptoHoldings>()
+
+    interface HoldingsListener {
+        fun onClickBuy(item: CryptoHoldings)
+    }
+
+    fun setHoldingsListener(listener: HoldingsListener) {
+        this.listener = listener
+    }
 
     @SuppressLint("NotifyDataSetChanged")
     fun setItems(holdingsList: ArrayList<CryptoHoldings>) {
@@ -47,6 +56,9 @@ class CryptoHoldingsEmptyStateListAdapter: RecyclerView.Adapter<CryptoHoldingsEm
                 .into(binding.ivCryptoHoldingIcon)
             if (adapterPosition + 1 == holdingsList.size) {
                 binding.viewDivider.visibility = View.GONE
+            }
+            binding.btnBuy.setOnClickListener {
+                listener.onClickBuy(item)
             }
         }
     }

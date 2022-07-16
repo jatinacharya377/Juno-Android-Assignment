@@ -43,9 +43,7 @@ class FragmentHome: FragmentBase<FragmentHomeBinding>(FragmentHomeBinding::infla
 
     private fun setUpObserver() {
         cryptoViewModel.cryptoState.observe(viewLifecycleOwner) { response ->
-            if (response.isNullOrEmpty()) {
-                setErrorAnimation(getString(R.string.list_is_empty_error), R.raw.anim_data_not_found)
-            } else {
+            if (response != null && response.isNotEmpty()) {
                 binding.layoutShimmer.stopShimmer()
                 binding.layoutShimmer.visibility = View.GONE
                 binding.rvCryptoStateList.visibility = View.VISIBLE
@@ -65,11 +63,6 @@ class FragmentHome: FragmentBase<FragmentHomeBinding>(FragmentHomeBinding::infla
                 }
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        cryptoViewModel.cryptoState.value = null
     }
 
     override fun setUpUi() {

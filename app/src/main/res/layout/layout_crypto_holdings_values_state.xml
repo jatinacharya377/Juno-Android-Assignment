@@ -13,7 +13,7 @@
             android:layout_width="@dimen/size_0"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/offset_12"
-            android:layout_marginTop="@dimen/offset_20"
+            android:layout_marginTop="@dimen/offset_12"
             android:text="@string/your_crypto_holdings"
             android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@id/rv_crypto_holdings_list"

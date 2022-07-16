@@ -14,6 +14,7 @@ class CryptoStateListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private lateinit var cryptoStateListener: CryptoStateListener
     private var cryptoStateList = ArrayList<CryptoState>()
+    private val transactionsAdapter = RecentTransactionsListAdapter()
 
     companion object {
         const val CRYPTO_ACC_EMPTY_STATE = 0
@@ -151,10 +152,11 @@ class CryptoStateListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    inner class CryptoHoldingsEmptyStateVH(val binding: LayoutCryptoHoldingsEmptyStateBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class CryptoHoldingsEmptyStateVH(val binding: LayoutCryptoHoldingsEmptyStateBinding): RecyclerView.ViewHolder(binding.root), CryptoHoldingsEmptyStateListAdapter.HoldingsListener {
         private val adapter = CryptoHoldingsEmptyStateListAdapter()
         fun bind(list: ArrayList<CryptoHoldings>) {
             binding.rvCryptoHoldingsList.adapter = adapter
+            adapter.setHoldingsListener(this)
             adapter.setItems(list)
             val listener: OnItemTouchListener = object : OnItemTouchListener {
                 override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
@@ -169,6 +171,8 @@ class CryptoStateListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             }
             binding.rvCryptoHoldingsList.addOnItemTouchListener(listener)
         }
+
+        override fun onClickBuy(item: CryptoHoldings) {}
     }
 
     inner class CryptoHoldingsValuesStateVH(val binding: LayoutCryptoHoldingsValuesStateBinding): RecyclerView.ViewHolder(binding.root) {
@@ -192,10 +196,9 @@ class CryptoStateListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     inner class RecentTransactionsVH(val binding: LayoutRecentTransactionsBinding): RecyclerView.ViewHolder(binding.root) {
-        private val adapter = RecentTransactionsListAdapter()
         fun bind(list: ArrayList<AllTransactions>) {
-            binding.rvRecentTransactionsList.adapter = adapter
-            adapter.setItems(list)
+            binding.rvRecentTransactionsList.adapter = transactionsAdapter
+            transactionsAdapter.setItems(list)
             val listener: OnItemTouchListener = object : OnItemTouchListener {
                 override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
                     when (e.action) {
@@ -213,11 +216,14 @@ class CryptoStateListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    inner class CurrentPricesVH(val binding: LayoutCurrentPricesBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class CurrentPricesVH(val binding: LayoutCurrentPricesBinding): RecyclerView.ViewHolder(binding.root), CurrentPricesListAdapter.CurrentPricesListener {
         private val adapter = CurrentPricesListAdapter()
         fun bind(list: ArrayList<CryptoPrices>) {
             binding.rvCurrentPricesList.adapter = adapter
+            adapter.setHoldingsListener(this)
             adapter.setItems(list)
         }
+
+        override fun onClickBuy(item: CryptoPrices) {}
     }
 }
