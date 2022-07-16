@@ -6,6 +6,11 @@ import com.juno.junoandroidassignment.data.model.crypto.CryptoState
 import com.juno.junoandroidassignment.data.model.error.ErrorCallback
 import com.juno.junoandroidassignment.data.remote.repository.CryptoRepository
 
+/**
+ * This component is the bridge between our UI and Data.
+ * It is responsible for providing data to our views after getting it from repository.
+ * @author: Jagannath Acharya
+ */
 class CryptoViewModel(app: Application): ViewModelBase(app) {
 
     private val repo = CryptoRepository()

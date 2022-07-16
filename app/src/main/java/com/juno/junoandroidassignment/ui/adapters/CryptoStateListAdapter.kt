@@ -10,12 +10,19 @@ import java.lang.Exception
 import android.view.MotionEvent
 import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
 
+/**
+ * This screen is responsible for populating crypto state list which contains Crypto Account, Crypto Holdings, Recent Transactions, & Current Prices.
+ * @author: Jagannath Acharya
+ */
 class CryptoStateListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private lateinit var cryptoStateListener: CryptoStateListener
     private var cryptoStateList = ArrayList<CryptoState>()
     private val transactionsAdapter = RecentTransactionsListAdapter()
 
+    /**
+     * These values are for multiple view types based on the crypto state.
+     */
     companion object {
         const val CRYPTO_ACC_EMPTY_STATE = 0
         const val CRYPTO_ACC_VALUES_STATE = 1
@@ -25,14 +32,27 @@ class CryptoStateListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         const val CRYPTO_CURRENT_PRICES = 5
     }
 
+    /**
+     * An interface to handle the onClick events of views.
+     * It has function which is triggered when a view clicked.
+     * @property: onClickViewAll()
+     */
     interface CryptoStateListener {
         fun onClickViewAll()
     }
 
+    /**
+     * This function is responsible for setting up our listener.
+     * @param: listener
+     */
     fun setListener(listener: CryptoStateListener) {
         cryptoStateListener = listener
     }
 
+    /**
+     * This function is responsible for setting up our cryptoStateList and notifying the RecyclerView about the data change.
+     * @param: cryptoStateList
+     */
     @SuppressLint("NotifyDataSetChanged")
     fun setItems(cryptoStateList: ArrayList<CryptoState>) {
         if (this.cryptoStateList.isNotEmpty()) {

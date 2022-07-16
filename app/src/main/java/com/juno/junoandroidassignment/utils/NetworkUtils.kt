@@ -10,7 +10,16 @@ import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import java.util.concurrent.TimeoutException
 
+/**
+ * This object class is responsible for identifying the exception.
+ * @author: Jagannath Acharya
+ */
 object NetworkUtils {
+    /**
+     * This function is responsible for providing us the error message based on exceptions.
+     * @param: throwable
+     * @return: String
+     */
     fun exceptionHandler(throwable: Throwable): String {
         throwable.message?.let { Log.e("error_message", it) }
         return when (throwable) {
@@ -20,11 +29,12 @@ object NetworkUtils {
                     400 -> MyApplication.INSTANCE.getString(R.string.bad_request_error)
                     401 -> MyApplication.INSTANCE.getString(R.string.unauthorized_error)
                     404 -> MyApplication.INSTANCE.getString(R.string.request_not_found_error)
-                    500 -> if (!response.isNullOrEmpty()) GsonUtils.jsonToGson<GenericResponse>(
-                        response
-                    ).message
-                        ?: MyApplication.INSTANCE.getString(R.string.something_went_wrong_error)
-                    else MyApplication.INSTANCE.getString(R.string.something_went_wrong_error)
+                    500 -> {
+                        if (!response.isNullOrEmpty())
+                            GsonUtils.jsonToGson<GenericResponse>(response).message ?: MyApplication.INSTANCE.getString(R.string.something_went_wrong_error)
+                        else
+                            MyApplication.INSTANCE.getString(R.string.something_went_wrong_error)
+                    }
                     else -> MyApplication.INSTANCE.getString(R.string.something_went_wrong_error)
                 }
             }

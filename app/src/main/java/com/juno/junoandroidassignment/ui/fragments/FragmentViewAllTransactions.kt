@@ -13,12 +13,21 @@ import com.juno.junoandroidassignment.databinding.FragmentViewAllTransactionsBin
 import com.juno.junoandroidassignment.ui.adapters.RecentTransactionsListAdapter
 import com.juno.junoandroidassignment.viewmodel.CryptoViewModel
 
+/**
+ * This screen is responsible for showing the list of recent transactions.
+ * It extends from FragmentBase which implements the function and properties of FragmentBase.
+ * @author: Jagannath Acharya
+ */
 class FragmentViewAllTransactions: FragmentBase<FragmentViewAllTransactionsBinding>(FragmentViewAllTransactionsBinding::inflate) {
 
     private val adapter = RecentTransactionsListAdapter()
     private val cryptoViewModel by activityViewModels<CryptoViewModel>()
     private val navArgs by navArgs<FragmentViewAllTransactionsArgs>()
 
+    /**
+     * This function is responsible for showing lottie animation based on the error message.
+     * @param: errorMessage, anim
+     */
     private fun setErrorAnimation(errorMessage: String, anim: Int) {
         binding.rvTransactionsList.visibility = View.GONE
         val dialogBinding = DialogErrorBinding.inflate(LayoutInflater.from(requireContext()))
@@ -40,6 +49,11 @@ class FragmentViewAllTransactions: FragmentBase<FragmentViewAllTransactionsBindi
         }
     }
 
+    /**
+     * This function is responsible for observing LiveData.
+     * cryptoState - This LiveData contains the list of CryptoState
+     * error - This LiveData contains the exception due to which API call has failed.
+     */
     private fun setUpObserver() {
         cryptoViewModel.cryptoState.observe(viewLifecycleOwner) { response ->
             if (response.isNullOrEmpty()) {
@@ -74,6 +88,10 @@ class FragmentViewAllTransactions: FragmentBase<FragmentViewAllTransactionsBindi
         cryptoViewModel.cryptoState.value = null
     }
 
+    /**
+     * This function is responsible for setting up our UI.
+     * It is an abstract function which is implemented by extending from FragmentBase.
+     */
     override fun setUpUi() {
         when  (navArgs.state) {
             0 -> cryptoViewModel.getEmptyStateCryptoResponse()

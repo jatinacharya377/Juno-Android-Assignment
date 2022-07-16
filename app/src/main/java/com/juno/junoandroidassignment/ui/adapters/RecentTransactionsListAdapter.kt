@@ -9,10 +9,18 @@ import com.juno.junoandroidassignment.R
 import com.juno.junoandroidassignment.data.model.crypto.AllTransactions
 import com.juno.junoandroidassignment.databinding.LayoutRecentTransactionsItemBinding
 
+/**
+ * This screen is responsible for populating recent transactions list.
+ * @author: Jagannath Acharya
+ */
 class RecentTransactionsListAdapter: RecyclerView.Adapter<RecentTransactionsListAdapter.RecentTransactionsVH>() {
 
     private var transactionsList = ArrayList<AllTransactions>()
 
+    /**
+     * This function is responsible for setting up our transactionsList and notifying the RecyclerView about the data change.
+     * @param: transactionsList
+     */
     @SuppressLint("NotifyDataSetChanged")
     fun setItems(transactionsList: ArrayList<AllTransactions>) {
         if (this.transactionsList.isNotEmpty()) {

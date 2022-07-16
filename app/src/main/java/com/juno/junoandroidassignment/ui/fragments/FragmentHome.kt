@@ -14,12 +14,21 @@ import com.juno.junoandroidassignment.databinding.FragmentHomeBinding
 import com.juno.junoandroidassignment.ui.adapters.CryptoStateListAdapter
 import com.juno.junoandroidassignment.viewmodel.CryptoViewModel
 
+/**
+ * This screen is responsible for showing home screen of the app which populates the response of Empty State and Values State based on the state value.
+ * It extends from FragmentBase which implements the function and properties of FragmentBase.
+ * @author: Jagannath Acharya
+ */
 class FragmentHome: FragmentBase<FragmentHomeBinding>(FragmentHomeBinding::inflate), CryptoStateListAdapter.CryptoStateListener {
 
     private val adapter = CryptoStateListAdapter()
     private val cryptoViewModel by activityViewModels<CryptoViewModel>()
     private val navArgs by navArgs<FragmentHomeArgs>()
 
+    /**
+     * This function is responsible for showing lottie animation based on the error message.
+     * @param: errorMessage, anim
+     */
     private fun setErrorAnimation(errorMessage: String, anim: Int) {
         binding.rvCryptoStateList.visibility = View.GONE
         val dialogBinding = DialogErrorBinding.inflate(LayoutInflater.from(requireContext()))
@@ -41,6 +50,11 @@ class FragmentHome: FragmentBase<FragmentHomeBinding>(FragmentHomeBinding::infla
         }
     }
 
+    /**
+     * This function is responsible for observing LiveData.
+     * cryptoState - This LiveData contains the list of CryptoState
+     * error - This LiveData contains the exception due to which API call has failed.
+     */
     private fun setUpObserver() {
         cryptoViewModel.cryptoState.observe(viewLifecycleOwner) { response ->
             if (response != null && response.isNotEmpty()) {
@@ -65,6 +79,10 @@ class FragmentHome: FragmentBase<FragmentHomeBinding>(FragmentHomeBinding::infla
         }
     }
 
+    /**
+     * This function is responsible for setting up our UI.
+     * It is an abstract function which is implemented by extending from FragmentBase.
+     */
     override fun setUpUi() {
         when  (navArgs.state) {
             0 -> cryptoViewModel.getEmptyStateCryptoResponse()
@@ -76,6 +94,10 @@ class FragmentHome: FragmentBase<FragmentHomeBinding>(FragmentHomeBinding::infla
         setUpObserver()
     }
 
+    /**
+     * This function is triggered when clicked on view all TextView in the Recent Transactions list.
+     * It is responsible for taking us to FragmentViewAllTransactions screen from FragmentHome screen.
+     */
     override fun onClickViewAll() {
         val action = FragmentHomeDirections.actionGoToViewAllTransactionsScreen(navArgs.state)
         findNavController().navigate(action)

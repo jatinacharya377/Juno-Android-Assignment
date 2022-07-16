@@ -9,19 +9,36 @@ import com.juno.junoandroidassignment.R
 import com.juno.junoandroidassignment.data.model.crypto.CryptoPrices
 import com.juno.junoandroidassignment.databinding.LayoutCurrentPricesItemBinding
 
+/**
+ * This screen is responsible for populating current prices list.
+ * @author: Jagannath Acharya
+ */
 class CurrentPricesListAdapter: RecyclerView.Adapter<CurrentPricesListAdapter.CurrentPricesVH>() {
 
     private lateinit var listener: CurrentPricesListener
     private var priceList = ArrayList<CryptoPrices>()
 
+    /**
+     * An interface to handle the onClick events of views.
+     * It has function which is triggered when a view clicked.
+     * @property: onClickBuy()
+     */
     interface CurrentPricesListener {
         fun onClickBuy(item: CryptoPrices)
     }
 
+    /**
+     * This function is responsible for setting up our listener.
+     * @param: listener
+     */
     fun setHoldingsListener(listener: CurrentPricesListener) {
         this.listener = listener
     }
 
+    /**
+     * This function is responsible for setting up our priceList and notifying the RecyclerView about the data change.
+     * @param: priceList
+     */
     @SuppressLint("NotifyDataSetChanged")
     fun setItems(priceList: ArrayList<CryptoPrices>) {
         if (this.priceList.isNotEmpty()) {

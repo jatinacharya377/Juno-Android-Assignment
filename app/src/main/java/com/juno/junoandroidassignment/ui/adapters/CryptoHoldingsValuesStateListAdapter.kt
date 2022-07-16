@@ -10,9 +10,17 @@ import com.juno.junoandroidassignment.R
 import com.juno.junoandroidassignment.data.model.crypto.CryptoHoldings
 import com.juno.junoandroidassignment.databinding.LayoutCryptoHoldingsValuesStateItemBinding
 
+/**
+ * This screen is responsible for populating values state crypto holdings list.
+ * @author: Jagannath Acharya
+ */
 class CryptoHoldingsValuesStateListAdapter: RecyclerView.Adapter<CryptoHoldingsValuesStateListAdapter.CryptoHoldingsVH>() {
     private var holdingsList = ArrayList<CryptoHoldings>()
 
+    /**
+     * This function is responsible for setting our holdingsList and notifying the RecyclerView about the data change.
+     * @param: holdingsList
+     */
     @SuppressLint("NotifyDataSetChanged")
     fun setItems(holdingsList: ArrayList<CryptoHoldings>) {
         if (this.holdingsList.isNotEmpty()) {

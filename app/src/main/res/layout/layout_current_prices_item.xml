@@ -55,7 +55,6 @@
                     android:layout_width="@dimen/size_120"
                     android:layout_height="@dimen/size_80"
                     android:layout_marginStart="@dimen/offset_10"
-                    android:src="@drawable/ic_graph"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/cv_current_prices_icon"
                     app:layout_constraintTop_toTopOf="parent"
