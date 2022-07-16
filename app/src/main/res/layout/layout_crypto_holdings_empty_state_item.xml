@@ -8,90 +8,108 @@
             name="cryptoHolding"
             type="com.juno.junoandroidassignment.data.model.crypto.CryptoHoldings" />
     </data>
-    
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/offset_12"
-        android:paddingVertical="@dimen/offset_10">
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cv_crypto_holding_icon"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_crypto_holding"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:cardBackgroundColor="@color/cultured"
-            app:cardCornerRadius="@dimen/offset_10"
-            app:cardElevation="@dimen/offset_0">
+            android:paddingHorizontal="@dimen/offset_12"
+            android:paddingVertical="@dimen/offset_10"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/iv_crypto_holding_icon"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_crypto_holding_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_app_logo_2"
-                tools:ignore="ContentDescription" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardBackgroundColor="@color/cultured"
+                app:cardCornerRadius="@dimen/offset_10"
+                app:cardElevation="@dimen/offset_0">
 
-        </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                    android:id="@+id/iv_crypto_holding_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_app_logo_2"
+                    tools:ignore="ContentDescription" />
 
-        <TextView
-            android:id="@+id/tv_crypto_account_title"
-            android:layout_width="@dimen/size_0"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/offset_20"
-            android:text="@{cryptoHolding.title}"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_deposit"
-            app:layout_constraintStart_toEndOf="@id/cv_crypto_holding_icon"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/TextTitle2"
-            tools:text="BTC" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/btn_deposit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/offset_10"
-            android:clickable="true"
-            android:focusable="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_buy"
-            app:layout_constraintTop_toTopOf="parent"
-            app:cardBackgroundColor="@android:color/transparent"
-            app:cardCornerRadius="@dimen/offset_4"
-            app:cardElevation="@dimen/offset_0"
-            app:strokeColor="@color/electric_indigo"
-            app:strokeWidth="@dimen/offset_1">
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_crypto_account_title"
+                android:layout_width="@dimen/size_0"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/offset_20"
-                android:layout_marginVertical="@dimen/offset_10"
+                android:text="@{cryptoHolding.title}"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_deposit"
+                app:layout_constraintStart_toEndOf="@id/cv_crypto_holding_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/TextTitle2"
+                tools:text="BTC" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_deposit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/offset_10"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_buy"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="@dimen/offset_4"
+                app:cardElevation="@dimen/offset_0"
+                app:strokeColor="@color/electric_indigo"
+                app:strokeWidth="@dimen/offset_1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/offset_20"
+                    android:layout_marginVertical="@dimen/offset_10"
+                    android:fontFamily="@font/work_sans"
+                    android:gravity="center"
+                    android:text="@string/deposit"
+                    android:textColor="@color/electric_indigo"
+                    style="@style/TextSmall" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/offset_0"
                 android:fontFamily="@font/work_sans"
-                android:gravity="center"
-                android:text="@string/deposit"
-                android:textColor="@color/electric_indigo"
-                style="@style/TextSmall" />
+                android:text="@string/buy"
+                android:textAllCaps="false"
+                android:textSize="@dimen/font_12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cornerRadius="@dimen/offset_4"
+                app:strokeColor="@color/electric_indigo"
+                app:strokeWidth="@dimen/offset_1" />
 
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_buy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/offset_0"
-            android:fontFamily="@font/work_sans"
-            android:text="@string/buy"
-            android:textAllCaps="false"
-            android:textSize="@dimen/font_12"
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="@dimen/size_2"
+            android:background="@drawable/bg_divider"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:cornerRadius="@dimen/offset_4"
-            app:strokeColor="@color/electric_indigo"
-            app:strokeWidth="@dimen/offset_1" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_crypto_holding" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

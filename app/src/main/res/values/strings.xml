@@ -10,10 +10,10 @@
     <string name="unauthorized_error">You are unauthorized to access this.</string>
     <string name="request_not_found_error">Request not Found.</string>
     <string name="something_went_wrong_error">Something went wrong!</string>
-    <string name="forbidden_error">Forbidden</string>
     <string name="no_internet_error">Failed to connect. Please, check your internet connection.</string>
     <string name="slow_internet_error">Slow internet connection. Please, check your connection.</string>
-    <string name="request_took_time_to_respond_error">Your request took too much time to respond. Please, try again!</string>
+    <string name="request_timeout_error">Your request took too much time to respond. Please, try again!</string>
+    <string name="list_is_empty_error">Data not found! List is empty.</string>
     <string name="deposit">Deposit</string>
     <string name="your_crypto_holdings">Your Crypto Holdings</string>
     <string name="buy">Buy</string>
@@ -26,4 +26,6 @@
     <string name="_24h">24h</string>
     <string name="current_sub_amount">$300.22 (+21.51%)</string>
     <string name="_7_22">7.22%</string>
+    <string name="fragment_view_all_transactions">FragmentViewAllTransactions</string>
+    <string name="retry">Retry</string>
 </resources>

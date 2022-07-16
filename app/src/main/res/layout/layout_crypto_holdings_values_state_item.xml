@@ -12,95 +12,109 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/offset_12">
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cv_crypto_holding_icon"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:cardCornerRadius="@dimen/offset_10"
-            app:cardElevation="@dimen/offset_0">
+            android:padding="@dimen/offset_12">
 
-            <ImageView
-                android:id="@+id/iv_crypto_holding_icon"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_crypto_holding_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_app_logo_2"
-                tools:ignore="ContentDescription" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardCornerRadius="@dimen/offset_10"
+                app:cardElevation="@dimen/offset_0">
 
-        </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                    android:id="@+id/iv_crypto_holding_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_app_logo_2"
+                    tools:ignore="ContentDescription" />
 
-        <LinearLayout
-            android:id="@+id/layout_title"
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/layout_title"
+                android:layout_width="@dimen/size_0"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/offset_14"
+                android:gravity="center|start"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/layout_balance"
+                app:layout_constraintStart_toEndOf="@id/cv_crypto_holding_icon"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_crypto_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{cryptoHolding.title}"
+                    android:textColor="@color/black"
+                    style="@style/TextTitle2"
+                    tools:text="BTC" />
+
+                <TextView
+                    android:id="@+id/tv_current_bal_in_token"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_6"
+                    android:text="@{@string/current_bal_in_token(cryptoHolding.current_bal_in_token, cryptoHolding.title)}"
+                    android:visibility="@{cryptoHolding.current_bal_in_token != null ? View.VISIBLE : View.GONE}"
+                    style="@style/TextSmall"
+                    tools:text="0.234412 BTC" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_balance"
+                android:layout_width="@dimen/size_0"
+                android:layout_height="wrap_content"
+                android:gravity="center|end"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/layout_title"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_current_bal_in_usd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@{@string/current_bal_in_usd(cryptoHolding.current_bal_in_usd)}"
+                    android:textColor="@color/black"
+                    style="@style/TextTitle2"
+                    tools:text="$131.70" />
+
+                <TextView
+                    android:id="@+id/tv_transaction_sub_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/offset_6"
+                    android:drawablePadding="@dimen/offset_10"
+                    android:gravity="center|end"
+                    android:text="@string/txn_sub_amount"
+                    android:textColor="@color/apple"
+                    app:drawableStartCompat="@drawable/ic_trending_up"
+                    style="@style/TextSmall"
+                    tools:text="$150.22 (+8.51%)" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_divider"
             android:layout_width="@dimen/size_0"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/offset_14"
-            android:gravity="center|start"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/layout_balance"
-            app:layout_constraintStart_toEndOf="@id/cv_crypto_holding_icon"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/tv_crypto_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{cryptoHolding.title}"
-                android:textColor="@color/black"
-                style="@style/TextTitle2"
-                tools:text="BTC" />
-
-            <TextView
-                android:id="@+id/tv_current_bal_in_token"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/offset_6"
-                android:text="@{@string/current_bal_in_token(cryptoHolding.current_bal_in_token, cryptoHolding.title)}"
-                android:visibility="@{cryptoHolding.current_bal_in_token != null ? View.VISIBLE : View.GONE}"
-                style="@style/TextSmall"
-                tools:text="0.234412 BTC" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layout_balance"
-            android:layout_width="@dimen/size_0"
-            android:layout_height="wrap_content"
-            android:gravity="center|end"
-            android:orientation="vertical"
+            android:layout_height="@dimen/size_2"
+            android:background="@drawable/bg_divider"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/layout_title"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/tv_current_bal_in_usd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="@{@string/current_bal_in_usd(cryptoHolding.current_bal_in_usd)}"
-                android:textColor="@color/black"
-                style="@style/TextTitle2"
-                tools:text="$131.70" />
-
-            <TextView
-                android:id="@+id/tv_transaction_sub_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/offset_6"
-                android:drawablePadding="@dimen/offset_10"
-                android:gravity="center|end"
-                android:text="@string/txn_sub_amount"
-                android:textColor="@color/apple"
-                app:drawableStartCompat="@drawable/ic_trending_up"
-                style="@style/TextSmall"
-                tools:text="$150.22 (+8.51%)" />
-
-        </LinearLayout>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_crypto_holding" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

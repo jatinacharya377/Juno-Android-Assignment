@@ -2,6 +2,7 @@ package com.juno.junoandroidassignment.ui.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.juno.junoandroidassignment.GlideApp
@@ -41,9 +42,12 @@ class CryptoHoldingsEmptyStateListAdapter: RecyclerView.Adapter<CryptoHoldingsEm
         fun bind(item: CryptoHoldings) {
             binding.cryptoHolding = item
             GlideApp.with(binding.root.context)
-                .load("https://cdn.onjuno.com/crypto-logo/BTC.svg")
+                .load(item.logo)
                 .placeholder(R.drawable.ic_app_logo_2)
                 .into(binding.ivCryptoHoldingIcon)
+            if (adapterPosition + 1 == holdingsList.size) {
+                binding.viewDivider.visibility = View.GONE
+            }
         }
     }
 }

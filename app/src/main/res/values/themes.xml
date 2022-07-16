@@ -13,4 +13,13 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="MaterialAlertDialogRounded" parent="@style/ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/RoundedCornersDialog</item>
+    </style>
+
+    <style name="RoundedCornersDialog">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/offset_6</item>
+    </style>
 </resources>

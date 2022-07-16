@@ -10,48 +10,15 @@
         <import type="android.view.View" />
     </data>
     
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tv_download"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/offset_6"
-            android:background="@drawable/bg_tv_buy"
-            android:elevation="@dimen/offset_1"
-            android:paddingHorizontal="@dimen/offset_10"
-            android:paddingVertical="@dimen/offset_4"
-            app:layout_constraintEnd_toStartOf="@id/tv_buy"
-            app:layout_constraintTop_toTopOf="parent"
-            app:drawableStartCompat="@drawable/ic_download"
-            app:drawableTint="@color/electric_indigo" />
-
-        <TextView
-            android:id="@+id/tv_buy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_tv_buy"
-            android:elevation="@dimen/offset_1"
-            android:paddingHorizontal="@dimen/offset_10"
-            android:paddingVertical="@dimen/offset_4"
-            android:text="@string/buy"
-            android:textColor="@color/electric_indigo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/TextNormal" />
-        
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/offset_10"
-            android:layout_marginStart="@dimen/offset_10"
+            android:layout_marginHorizontal="@dimen/offset_10"
             android:layout_marginVertical="@dimen/offset_10"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:cardCornerRadius="@dimen/offset_10"
             app:cardElevation="@dimen/offset_0"
             app:contentPadding="@dimen/offset_10"
@@ -88,6 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/offset_10"
+                    android:layout_marginTop="@dimen/offset_10"
                     android:src="@drawable/ic_graph"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/cv_current_prices_icon"
@@ -109,7 +77,7 @@
                     android:id="@+id/tv_current_price_in_usd"
                     android:layout_width="@dimen/size_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/offset_10"
+                    android:layout_marginTop="@dimen/offset_6"
                     android:text="@{@string/current_bal_in_usd(price.current_bal_in_usd)}"
                     android:textColor="@color/black"
                     android:visibility="@{price.current_bal_in_usd != null ? View.VISIBLE : View.GONE}"
@@ -123,7 +91,7 @@
                     android:id="@+id/tv_current_price_value"
                     android:layout_width="@dimen/size_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/offset_6"
+                    android:layout_marginTop="@dimen/offset_4"
                     android:drawablePadding="@dimen/offset_4"
                     android:gravity="center"
                     android:text="@string/_7_22"
@@ -141,12 +109,48 @@
                     android:layout_marginStart="@dimen/offset_10"
                     android:text="@string/_24h"
                     android:textColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_current_price_value"
                     app:layout_constraintStart_toEndOf="@id/tv_current_price_value"
                     app:layout_constraintTop_toTopOf="@id/tv_current_price_value"
                     style="@style/TextExtraSmall"
                     tools:text="24h" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </com.google.android.material.card.MaterialCardView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:orientation="horizontal"
+            android:padding="@dimen/offset_2">
+
+            <TextView
+                android:id="@+id/tv_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/offset_6"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_tv_buy"
+                android:elevation="@dimen/offset_1"
+                android:paddingHorizontal="@dimen/offset_10"
+                android:paddingVertical="@dimen/offset_4"
+                app:drawableStartCompat="@drawable/ic_download"
+                app:drawableTint="@color/electric_indigo" />
+
+            <TextView
+                android:id="@+id/tv_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_tv_buy"
+                android:elevation="@dimen/offset_1"
+                android:paddingHorizontal="@dimen/offset_10"
+                android:paddingVertical="@dimen/offset_4"
+                android:text="@string/buy"
+                android:textColor="@color/electric_indigo"
+                style="@style/TextNormal" />
+
+        </LinearLayout>
+    </FrameLayout>
 </layout>

@@ -16,7 +16,7 @@ abstract class ViewModelBase(application: Application): AndroidViewModel(applica
     }
     val error = MutableLiveData<ErrorCallback>()
     private val exceptionHandler = CoroutineExceptionHandler {_, throwable ->
-        error.value = ErrorCallback(true, NetworkUtils.exceptionHandler(throwable))
+        error.postValue(ErrorCallback(true, NetworkUtils.exceptionHandler(throwable)))
     }
 
     fun getCryptoStateList(response: CryptoStateResponse, state: Int): ArrayList<CryptoState> {

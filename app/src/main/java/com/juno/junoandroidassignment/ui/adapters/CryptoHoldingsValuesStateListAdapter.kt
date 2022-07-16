@@ -2,9 +2,9 @@ package com.juno.junoandroidassignment.ui.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.juno.junoandroidassignment.GlideApp
 import com.juno.junoandroidassignment.R
 import com.juno.junoandroidassignment.data.model.crypto.CryptoHoldings
@@ -44,6 +44,9 @@ class CryptoHoldingsValuesStateListAdapter: RecyclerView.Adapter<CryptoHoldingsV
                 .load(item.logo)
                 .placeholder(R.drawable.ic_app_logo_2)
                 .into(binding.ivCryptoHoldingIcon)
+            if (adapterPosition + 1 == holdingsList.size) {
+                binding.viewDivider.visibility = View.GONE
+            }
         }
     }
 }

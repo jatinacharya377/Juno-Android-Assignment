@@ -37,6 +37,23 @@
         android:name="com.juno.junoandroidassignment.ui.fragments.FragmentHome"
         android:label="@string/fragment_home"
         tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_go_to_view_all_transactions_screen"
+            app:destination="@id/fragment_view_all_transactions"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="state"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_view_all_transactions"
+        android:name="com.juno.junoandroidassignment.ui.fragments.FragmentViewAllTransactions"
+        android:label="@string/fragment_view_all_transactions"
+        tools:layout="@layout/fragment_view_all_transactions">
         <argument
             android:name="state"
             app:argType="integer" />

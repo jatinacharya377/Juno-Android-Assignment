@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
 
 class CryptoStateListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    private lateinit var cryptoStateListener: CryptoStateListener
     private var cryptoStateList = ArrayList<CryptoState>()
-    private var state: Int = 0
 
     companion object {
         const val CRYPTO_ACC_EMPTY_STATE = 0
@@ -24,13 +24,20 @@ class CryptoStateListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         const val CRYPTO_CURRENT_PRICES = 5
     }
 
+    interface CryptoStateListener {
+        fun onClickViewAll()
+    }
+
+    fun setListener(listener: CryptoStateListener) {
+        cryptoStateListener = listener
+    }
+
     @SuppressLint("NotifyDataSetChanged")
-    fun setItems(cryptoStateList: ArrayList<CryptoState>, state: Int) {
+    fun setItems(cryptoStateList: ArrayList<CryptoState>) {
         if (this.cryptoStateList.isNotEmpty()) {
             this.cryptoStateList.clear()
         }
         this.cryptoStateList = cryptoStateList
-        this.state = state
         notifyDataSetChanged()
     }
 
@@ -196,11 +203,13 @@ class CryptoStateListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     }
                     return false
                 }
-
                 override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {}
                 override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {}
             }
             binding.rvRecentTransactionsList.addOnItemTouchListener(listener)
+            binding.tvViewAll.setOnClickListener {
+                cryptoStateListener.onClickViewAll()
+            }
         }
     }
 
